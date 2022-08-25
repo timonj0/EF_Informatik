@@ -5,7 +5,6 @@
 * Alter: 16
 * Wohnort: Lyss
 * Geschwister: zwei ältere Brüder
-* Geschlecht: Mayo
 
 **Hobbies:**
 * Geräteturnen
