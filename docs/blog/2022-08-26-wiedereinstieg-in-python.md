@@ -1,0 +1,3 @@
+# Wiedereinstieg in Python
+
+Der Wiedereinstieg ist mir eher leich gefallen. Seltsamerweise hatte ich bei fast jeder Aufgabe ein Déja-vu Erlebnis, durch welches mir das Lösen erleichtert wurde. Fehler habe ich natürlich dennoch gemacht, ich habe schliesslich eine ganze Weile kein Python mehr benutzt weshalb die sprachspeifischen Syntaxkentnisse etwas eingerostet waren. Dank der selbsterklärenden Natur der Aufgaben stellte dies aber kein allzu grosses Problem dar.
