@@ -28,7 +28,8 @@ noten[3] = 5.5
 print(noten)
 
 # 6) Fehler: Zuweisen zu einem Element mit ungültigem Index (die Liste ist nicht so lang)
-# noten[7] = 6
+#noten[7] = 6
+print(noten)
 
 # 7) Ein weiteres Element am Schluss der Liste anhängen
 noten.append(5)
