@@ -13,9 +13,9 @@ def seite(l):
 
 
 def sternchenrechteck(l):
-    obenundunten()(l)
+    obenundunten(l)
     seite(l)
-    obenundunten()(l)
+    obenundunten(l)
 
 
-sternchenrechteck(-15)
+sternchenrechteck(100)
