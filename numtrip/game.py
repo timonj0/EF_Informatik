@@ -18,7 +18,6 @@ def randomboard(size: int):
 def print_board(board):
     """Print a pretty board"""
     max_len = 1
-    size = len(board)
 
     # Get the length of the longest number on the board
     for l in board:
@@ -27,13 +26,24 @@ def print_board(board):
                 max_len = len(str(i))
 
     # Print board
+    # Column Numbers
+    n = 1
+    for i in board:
+        print(f"+   {n}   ", end='')
+        n = n + 1
+    print("+")
+    n = 1
+    # Lines
     for line in board:
+        print("+", end='')
         for i in line:
             print("+-------", end='')
         print("+")
         for i in line:
-            print("|       ", end='')
-        print("|")
+            print(" |      ", end='')
+        print(" |")
+        # Line numbers
+        print(n, end='')
         for i in line:
             print("|", end='')
             spaces = 7 - len(str(i))
@@ -46,13 +56,15 @@ def print_board(board):
                 print(" ", end='')
         print("|")
         for i in line:
-            print("|       ", end='')
-        print("|")
+            print(" |      ", end='')
+        print(" |")
+        n = n + 1
+    print("+", end='')
     for i in line:
         print("+-------", end='')
     print("+")
 
 
-board = randomboard(4)
+board = randomboard(6)
 print(board)
 print_board(board)
