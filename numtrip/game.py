@@ -28,6 +28,7 @@ def print_board(board):
     # Print board
     # Column Numbers
     n = 1
+    print(" ", end='')
     for i in board:
         print(f"+   {n}   ", end='')
         n = n + 1
