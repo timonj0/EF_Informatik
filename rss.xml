@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Lern Blog Blog</title>
+        <link>https://timonj0.github.io/EF_Informatik/</link>
+        <description>Lern Blog Blog</description>
+        <lastBuildDate>Fri, 26 Aug 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>de</language>
+        <item>
+            <title><![CDATA[Wiedereinstieg in Python]]></title>
+            <link>https://timonj0.github.io/EF_Informatik/2022/08/26/wiedereinstieg-in-python</link>
+            <guid>/2022/08/26/wiedereinstieg-in-python</guid>
+            <pubDate>Fri, 26 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Der Wiedereinstieg ist mir eher leich gefallen. Seltsamerweise hatte ich bei fast jeder Aufgabe ein Déja-vu Erlebnis, durch welches mir das Lösen erleichtert wurde. Fehler habe ich natürlich dennoch gemacht, ich habe schliesslich eine ganze Weile kein Python mehr benutzt weshalb die sprachspeifischen Syntaxkentnisse etwas eingerostet waren. Dank der selbsterklärenden Natur der Aufgaben stellte dies aber kein allzu grosses Problem dar.]]></description>
+            <content:encoded><![CDATA[<p>Der Wiedereinstieg ist mir eher leich gefallen. Seltsamerweise hatte ich bei fast jeder Aufgabe ein Déja-vu Erlebnis, durch welches mir das Lösen erleichtert wurde. Fehler habe ich natürlich dennoch gemacht, ich habe schliesslich eine ganze Weile kein Python mehr benutzt weshalb die sprachspeifischen Syntaxkentnisse etwas eingerostet waren. Dank der selbsterklärenden Natur der Aufgaben stellte dies aber kein allzu grosses Problem dar.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

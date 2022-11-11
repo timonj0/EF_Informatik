@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://timonj0.github.io/EF_Informatik/</id>
+    <title>Lern Blog Blog</title>
+    <updated>2022-08-26T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://timonj0.github.io/EF_Informatik/"/>
+    <subtitle>Lern Blog Blog</subtitle>
+    <icon>https://timonj0.github.io/EF_Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Wiedereinstieg in Python]]></title>
+        <id>/2022/08/26/wiedereinstieg-in-python</id>
+        <link href="https://timonj0.github.io/EF_Informatik/2022/08/26/wiedereinstieg-in-python"/>
+        <updated>2022-08-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Der Wiedereinstieg ist mir eher leich gefallen. Seltsamerweise hatte ich bei fast jeder Aufgabe ein Déja-vu Erlebnis, durch welches mir das Lösen erleichtert wurde. Fehler habe ich natürlich dennoch gemacht, ich habe schliesslich eine ganze Weile kein Python mehr benutzt weshalb die sprachspeifischen Syntaxkentnisse etwas eingerostet waren. Dank der selbsterklärenden Natur der Aufgaben stellte dies aber kein allzu grosses Problem dar.]]></summary>
+        <content type="html"><![CDATA[<p>Der Wiedereinstieg ist mir eher leich gefallen. Seltsamerweise hatte ich bei fast jeder Aufgabe ein Déja-vu Erlebnis, durch welches mir das Lösen erleichtert wurde. Fehler habe ich natürlich dennoch gemacht, ich habe schliesslich eine ganze Weile kein Python mehr benutzt weshalb die sprachspeifischen Syntaxkentnisse etwas eingerostet waren. Dank der selbsterklärenden Natur der Aufgaben stellte dies aber kein allzu grosses Problem dar.</p>]]></content>
+    </entry>
+</feed>
