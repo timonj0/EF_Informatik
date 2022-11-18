@@ -67,17 +67,18 @@ def print_board(board_to_print):
     print("+")
 
 
-def gameloop():
-    global board
+def user_input(board):
+    """Mark the field selected by the User by changing it to '-1'"""
+    field_xy = input("Feld Auswählen: ").split(" ")
+    field_x = int(field_xy[0]) - 1
+    field_y = int(field_xy[1]) - 1
+    board[field_x][field_y] = -1
+
+
+def gameloop(board):
     while True:
         print_board(board)
-        field_xy = input("Feld Auswählen: ").split("/")
-        field_x = int(field_xy[0]) - 1
-        field_y = int(field_xy[1]) - 1
-        board[field_x][field_y] = " "
-        print(board[field_x][field_y])
+        user_input(board)
 
 
-board = randomboard(6)
-print(board)
-gameloop()
+gameloop(randomboard(5))
