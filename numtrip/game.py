@@ -15,9 +15,10 @@ def randomboard(size: int):
     ]
 
 
-def print_board(board):
+def print_board(board_to_print):
     """Print a pretty board"""
     max_len = 1
+    board = board_to_print
 
     # Get the length of the longest number on the board
     for l in board:
@@ -66,6 +67,17 @@ def print_board(board):
     print("+")
 
 
+def gameloop():
+    global board
+    while True:
+        print_board(board)
+        field_xy = input("Feld Auswählen: ").split("/")
+        field_x = int(field_xy[0]) - 1
+        field_y = int(field_xy[1]) - 1
+        board[field_x][field_y] = " "
+        print(board[field_x][field_y])
+
+
 board = randomboard(6)
 print(board)
-print_board(board)
+gameloop()
