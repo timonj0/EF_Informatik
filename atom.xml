@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://timonj0.github.io/EF_Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2022-08-26T00:00:00.000Z</updated>
+    <updated>2022-11-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://timonj0.github.io/EF_Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://timonj0.github.io/EF_Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[User Input in NumTrip]]></title>
+        <id>/2022/11/18/user-input</id>
+        <link href="https://timonj0.github.io/EF_Informatik/2022/11/18/user-input"/>
+        <updated>2022-11-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Eingabe erhalten und Feld markieren]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="eingabe-erhalten-und-feld-markieren">Eingabe erhalten und Feld markieren<a class="hash-link" href="#eingabe-erhalten-und-feld-markieren" title="Direkter Link zur Überschrift">​</a></h2><p>In einem ersten Schritt gibt der Spieler das Feld an, dieses Feld wird lokalisiert und mit '-1' markiert.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="gameloop-implementation">Gameloop Implementation<a class="hash-link" href="#gameloop-implementation" title="Direkter Link zur Überschrift">​</a></h2><p>In einem zweiten Schritt habe ich eine Gameloop-Funktion implementiert, welche in einem loop die "print_board" und "user_input" Funktionen aufruft.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Wiedereinstieg in Python]]></title>
         <id>/2022/08/26/wiedereinstieg-in-python</id>
