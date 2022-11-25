@@ -4,6 +4,9 @@ import random
 import math
 import json
 
+gamedata = {}
+gamedata_path = "./gamedata.json"
+
 
 def randomboard(size: int):
     """Generate a random board"""
@@ -74,6 +77,18 @@ def user_input(board):
     except:
         print("Invalid user input")
         user_input(board)
+
+
+def save_gamedata(board):
+    gamedata['game_board'] = board
+    with open(gamedata_path, 'w') as f:
+        json.dump(gamedata, f)
+
+
+def load_gamedata(board):
+    with open(gamedata_path, 'r') as f:
+        gamedata = json.load(f)
+        board = gamedata['game_board']
 
 
 def gameloop(board):
