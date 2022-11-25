@@ -2,10 +2,7 @@ from turtle import color
 import colorama
 import random
 import math
-from colorama import Fore, Back, Style
-colorama.init()
-
-colors = [Back.GREEN, Back.BLUE, Back.GREEN, Back.RED, Back.YELLOW, Back.CYAN, Back.WHITE, Back.MAGENTA]
+import json
 
 
 def randomboard(size: int):
