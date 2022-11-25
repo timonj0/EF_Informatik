@@ -71,12 +71,37 @@ def user_input(board):
     """Mark the field selected by the User by changing it to '-1'"""
     field_xy = input("Feld Auswählen: ").split(" ")
     try:
-        field_x = int(field_xy[0]) - 1
-        field_y = int(field_xy[1]) - 1
-        board[field_x][field_y] = -1
+        field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
+        # TODO switch x/y
+        return field_xy
     except:
         print("Invalid user input")
         user_input(board)
+
+
+def field_exists(board, field_xy):
+    field_x = field_xy[0]
+    field_y = field_xy[1]
+
+    if not -1 < field_x < len(board):
+        return False
+    elif not -1 < field_x < len(board):
+        return False
+    else:
+        return True
+
+
+def mark_neighbours(board, selected_field: list):
+    stack = [selected_field]
+    target_number = int(board[selected_field[0]][selected_field[1]])
+    while not len(stack) == 0:
+        current_field = stack.pop()
+        if board[current_field[0]][current_field[1]] == target_number and field_exists(board, current_field):
+            board[current_field[0]][current_field[1]] = -1
+            stack.append([current_field[0], current_field[1] + 1])
+            stack.append([current_field[0], current_field[1] - 1])
+            stack.append([current_field[0] + 1, current_field[1]])
+            stack.append([current_field[0] - 1, current_field[1]])
 
 
 def save_gamedata(board):
@@ -94,7 +119,8 @@ def load_gamedata(board):
 def gameloop(board):
     while True:
         print_board(board)
-        user_input(board)
+        selected_field = user_input(board)
+        mark_neighbours(board, selected_field)
 
 
 gameloop(randomboard(5))
