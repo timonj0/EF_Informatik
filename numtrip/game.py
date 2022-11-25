@@ -70,9 +70,13 @@ def print_board(board_to_print):
 def user_input(board):
     """Mark the field selected by the User by changing it to '-1'"""
     field_xy = input("Feld Auswählen: ").split(" ")
-    field_x = int(field_xy[0]) - 1
-    field_y = int(field_xy[1]) - 1
-    board[field_x][field_y] = -1
+    try:
+        field_x = int(field_xy[0]) - 1
+        field_y = int(field_xy[1]) - 1
+        board[field_x][field_y] = -1
+    except:
+        print("Invalid user input")
+        user_input(board)
 
 
 def gameloop(board):
