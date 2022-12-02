@@ -1,11 +1,16 @@
 from turtle import color
-import colorama
 import random
 import math
 import json
 
 gamedata = {}
 gamedata_path = "./gamedata.json"
+
+# DEBUG
+my_board = [[2, 32, 8, 16],
+            [2, 4, 8, 32],
+            [2, 4, 32, 64],
+            [2, 32, 64, 128]]
 
 
 def randomboard(size: int):
@@ -68,7 +73,7 @@ def print_board(board_to_print):
 
 
 def user_input(board):
-    """Mark the field selected by the User by changing it to '-1'"""
+    """Validatte and return user input to select a field"""
     field_xy = input("Feld Auswählen: ").split(" ")
     try:
         field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
@@ -80,6 +85,7 @@ def user_input(board):
 
 
 def field_exists(board, field_xy):
+    """Check if field_xy exists"""
     field_x = field_xy[0]
     field_y = field_xy[1]
 
@@ -92,25 +98,47 @@ def field_exists(board, field_xy):
 
 
 def mark_neighbours(board, selected_field: list):
+    """Mark all connected fields with the same number with -1 and double the value of the selected field"""
     stack = [selected_field]
     target_number = int(board[selected_field[0]][selected_field[1]])
+    board[selected_field[0]][selected_field[1]] = target_number * 2
     while not len(stack) == 0:
         current_field = stack.pop()
         if board[current_field[0]][current_field[1]] == target_number and field_exists(board, current_field):
             board[current_field[0]][current_field[1]] = -1
-            stack.append([current_field[0], current_field[1] + 1])
-            stack.append([current_field[0], current_field[1] - 1])
-            stack.append([current_field[0] + 1, current_field[1]])
-            stack.append([current_field[0] - 1, current_field[1]])
+            if field_exists(board, [current_field[0], current_field[1] + 1]):
+                stack.append([current_field[0], current_field[1] + 1])
+            if field_exists(board, [current_field[0], current_field[1] - 1]):
+                stack.append([current_field[0], current_field[1] - 1])
+            if field_exists(board, [current_field[0] + 1, current_field[1]]):
+                stack.append([current_field[0] + 1, current_field[1]])
+            if field_exists(board, [current_field[0] - 1, current_field[1]]):
+                stack.append([current_field[0] - 1, current_field[1]])
+
+
+def fill_baord(board):
+    """Fill all empty spaces in a gameboard"""
+    columns = [[board[j][i] for j in range(len(board))] for i in range(len(board[0]))]
+    print(board)
+    print(columns)
+    for column in columns:
+        for i in range(column.count(-1)):
+            column.remove(-1)
+            column.append(2**random.randint(1, 3))
+        column.reverse()
+
+    return [[columns[j][i] for j in range(len(columns))] for i in range(len(columns[0]))]
 
 
 def save_gamedata(board):
+    """Save game data to .json file"""
     gamedata['game_board'] = board
     with open(gamedata_path, 'w') as f:
         json.dump(gamedata, f)
 
 
 def load_gamedata(board):
+    """Load game data from .json file"""
     with open(gamedata_path, 'r') as f:
         gamedata = json.load(f)
         board = gamedata['game_board']
@@ -121,6 +149,9 @@ def gameloop(board):
         print_board(board)
         selected_field = user_input(board)
         mark_neighbours(board, selected_field)
+        board = fill_baord(board)
 
 
-gameloop(randomboard(5))
+# gameloop(randomboard(5))
+
+gameloop(my_board)
