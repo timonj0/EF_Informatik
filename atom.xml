@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://timonj0.github.io/EF_Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2022-11-18T00:00:00.000Z</updated>
+    <updated>2022-12-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://timonj0.github.io/EF_Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://timonj0.github.io/EF_Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
+        <id>/2022/12/02/weiterarbeit-an-numtrip</id>
+        <link href="https://timonj0.github.io/EF_Informatik/2022/12/02/weiterarbeit-an-numtrip"/>
+        <updated>2022-12-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Die heutige Arbeit bestand gänzlich aus mehrfachem Neuschreiben des Algorithmus zum Zusammenschieben der Felder und extrem anstregneder Fehlersuche. Das Resultat ist nun ein Algroithmus der zwar noch nicht immer das tut was er soll, das Spiel stürtzt jedoch immerhin nicht mehr ab.]]></summary>
+        <content type="html"><![CDATA[<p>Die heutige Arbeit bestand gänzlich aus mehrfachem Neuschreiben des Algorithmus zum Zusammenschieben der Felder und extrem anstregneder Fehlersuche. Das Resultat ist nun ein Algroithmus der zwar noch nicht immer das tut was er soll, das Spiel stürtzt jedoch immerhin nicht mehr ab.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[User Input in NumTrip]]></title>
         <id>/2022/11/18/user-input</id>

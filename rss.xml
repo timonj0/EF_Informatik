@@ -4,10 +4,18 @@
         <title>Lern Blog Blog</title>
         <link>https://timonj0.github.io/EF_Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Fri, 18 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 02 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
+        <item>
+            <title><![CDATA[Weiterarbeit an NumTrip]]></title>
+            <link>https://timonj0.github.io/EF_Informatik/2022/12/02/weiterarbeit-an-numtrip</link>
+            <guid>/2022/12/02/weiterarbeit-an-numtrip</guid>
+            <pubDate>Fri, 02 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Die heutige Arbeit bestand gänzlich aus mehrfachem Neuschreiben des Algorithmus zum Zusammenschieben der Felder und extrem anstregneder Fehlersuche. Das Resultat ist nun ein Algroithmus der zwar noch nicht immer das tut was er soll, das Spiel stürtzt jedoch immerhin nicht mehr ab.]]></description>
+            <content:encoded><![CDATA[<p>Die heutige Arbeit bestand gänzlich aus mehrfachem Neuschreiben des Algorithmus zum Zusammenschieben der Felder und extrem anstregneder Fehlersuche. Das Resultat ist nun ein Algroithmus der zwar noch nicht immer das tut was er soll, das Spiel stürtzt jedoch immerhin nicht mehr ab.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[User Input in NumTrip]]></title>
             <link>https://timonj0.github.io/EF_Informatik/2022/11/18/user-input</link>
