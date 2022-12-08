@@ -73,11 +73,11 @@ def print_board(board_to_print):
 
 
 def user_input(board):
-    """Validatte and return user input to select a field"""
+    """Validate and return user input to select a field"""
     field_xy = input("Feld Auswählen: ").split(" ")
     try:
         field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
-        # TODO switch x/y
+        field_xy.reverse()
         return field_xy
     except:
         print("Invalid user input")
