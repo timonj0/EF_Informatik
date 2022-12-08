@@ -101,7 +101,6 @@ def mark_neighbours(board, selected_field: list):
     """Mark all connected fields with the same number with -1 and double the value of the selected field"""
     stack = [selected_field]
     target_number = int(board[selected_field[0]][selected_field[1]])
-    board[selected_field[0]][selected_field[1]] = target_number * 2
     while not len(stack) == 0:
         current_field = stack.pop()
         if board[current_field[0]][current_field[1]] == target_number and field_exists(board, current_field):
@@ -115,17 +114,21 @@ def mark_neighbours(board, selected_field: list):
             if field_exists(board, [current_field[0] - 1, current_field[1]]):
                 stack.append([current_field[0] - 1, current_field[1]])
 
+    board[selected_field[0]][selected_field[1]] = target_number * 2
+
 
 def fill_baord(board):
     """Fill all empty spaces in a gameboard"""
+
+    # TODO Not the most elegant solution
     columns = [[board[j][i] for j in range(len(board))] for i in range(len(board[0]))]
-    print(board)
-    print(columns)
+
     for column in columns:
-        for i in range(column.count(-1)):
-            column.remove(-1)
-            column.append(2**random.randint(1, 3))
-        column.reverse()
+        if -1 in column:
+            for i in range(column.count(-1)):
+                column.remove(-1)
+                column.append(2 ** random.randint(1, 3))
+            column.reverse()
 
     return [[columns[j][i] for j in range(len(columns))] for i in range(len(columns[0]))]
 
@@ -149,6 +152,7 @@ def gameloop(board):
         print_board(board)
         selected_field = user_input(board)
         mark_neighbours(board, selected_field)
+        print_board(board)
         board = fill_baord(board)
 
 
