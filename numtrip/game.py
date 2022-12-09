@@ -78,7 +78,10 @@ def user_input(board):
     try:
         field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
         field_xy.reverse()
-        return field_xy
+        if field_has_same_value_neighbours(board, field_xy):
+            return field_xy
+        else:
+            raise Exception("Field has no same value neighbours")
     except:
         print("Invalid user input")
         user_input(board)
