@@ -97,6 +97,23 @@ def field_exists(board, field_xy):
         return True
 
 
+def field_has_same_value_neighbours(board, field_xy):
+    target_value = board[field_xy[0]][field_xy[1]]
+    stack = []
+    if field_exists(board, [field_xy[0], field_xy[1] + 1]):
+        stack.append([field_xy[0], field_xy[1] + 1])
+    if field_exists(board, [field_xy[0], field_xy[1] - 1]):
+        stack.append([field_xy[0], field_xy[1] - 1])
+    if field_exists(board, [field_xy[0] + 1, field_xy[1]]):
+        stack.append([field_xy[0] + 1, field_xy[1]])
+    if field_exists(board, [field_xy[0] - 1, field_xy[1]]):
+        stack.append([field_xy[0] - 1, field_xy[1]])
+    for field in stack:
+        if board[field[0]][field[1]] == target_value:
+            return True
+    return False
+
+
 def mark_neighbours(board, selected_field: list):
     """Mark all connected fields with the same number with -1 and double the value of the selected field"""
     stack = [selected_field]
@@ -152,7 +169,6 @@ def gameloop(board):
         print_board(board)
         selected_field = user_input(board)
         mark_neighbours(board, selected_field)
-        print_board(board)
         board = fill_baord(board)
 
 
