@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkef_website_template=self.webpackChunkef_website_template||[]).push([[716],{6262:e=>{e.exports=JSON.parse('{"permalink":"/EF_Informatik/","page":1,"postsPerPage":4,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
