@@ -94,7 +94,7 @@ def field_exists(board, field_xy):
 
     if not -1 < field_x < len(board):
         return False
-    elif not -1 < field_x < len(board):
+    elif not -1 < field_y < len(board):
         return False
     else:
         return True
@@ -154,9 +154,9 @@ def fill_baord(board):
 
 
 def check_game_over(board):
-    for line_number in len(board):
-        for field_number in len(board[line_number]):
-            if field_has_same_value_neighbours([line_number, field_number]):
+    for line_number in range(len(board)):
+        for field_number in range(len(board[line_number])):
+            if field_has_same_value_neighbours(board, [line_number, field_number]):
                 return True
     return False
 
@@ -183,8 +183,9 @@ def gameloop(board):
         mark_neighbours(board, selected_field)
         board = fill_baord(board)
 
-        game = check_game_over()
+        game = check_game_over(board)
 
+    print_board(board)
     print("Game Over!")
 
 
