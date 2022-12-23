@@ -153,6 +153,14 @@ def fill_baord(board):
     return [[columns[j][i] for j in range(len(columns))] for i in range(len(columns[0]))]
 
 
+def check_game_over(board):
+    for line_number in len(board):
+        for field_number in len(board[line_number]):
+            if field_has_same_value_neighbours([line_number, field_number]):
+                return True
+    return False
+
+
 def save_gamedata(board):
     """Save game data to .json file"""
     gamedata['game_board'] = board
@@ -168,11 +176,16 @@ def load_gamedata(board):
 
 
 def gameloop(board):
-    while True:
+    game = True
+    while game:
         print_board(board)
         selected_field = user_input(board)
         mark_neighbours(board, selected_field)
         board = fill_baord(board)
+
+        game = check_game_over()
+
+    print("Game Over!")
 
 
 # gameloop(randomboard(5))
