@@ -74,7 +74,7 @@ def print_board(board_to_print):
 
 def user_input(board):
     """Validate and return user input to select a field"""
-    field_xy = input("Feld Auswählen: ").split(" ")
+    field_xy = input("Feld Auswählen (<x> <y>): ").split(" ")
     try:
         field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
         field_xy.reverse()
