@@ -140,13 +140,13 @@ def mark_neighbours(board, selected_field: list):
 def fill_baord(board):
     """Fill all empty spaces in a gameboard"""
 
-    # TODO Not the most elegant solution
+    # Save individual columns in a list instead of rows, left to right, top to bottom
     columns = [[board[j][i] for j in range(len(board))] for i in range(len(board[0]))]
 
     for column in columns:
         if -1 in column:
             for i in range(column.count(-1)):
-                column.remove(-1)
+                column.pop(column.index(-1))
                 column.append(2 ** random.randint(1, 3))
             column.reverse()
 
