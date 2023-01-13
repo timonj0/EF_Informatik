@@ -1,16 +1,5 @@
-from turtle import color
 import random
 import math
-import json
-
-gamedata = {}
-gamedata_path = "./gamedata.json"
-
-# DEBUG
-my_board = [[2, 32, 8, 16],
-            [2, 4, 8, 32],
-            [2, 4, 32, 64],
-            [2, 32, 64, 128]]
 
 
 def randomboard(size: int):
@@ -176,6 +165,4 @@ def gameloop(board):
     print("Game Over!")
 
 
-# (randomboard(5))
-
-gameloop(my_board)
+gameloop(randomboard(5))
