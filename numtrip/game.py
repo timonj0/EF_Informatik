@@ -2,6 +2,7 @@ import random
 import math
 
 BOARD_SIZE = 5
+WIN_SCORE = 1024
 
 
 def randomboard(size: int):
@@ -146,10 +147,17 @@ def fill_baord(board):
 
 
 def check_game_over(board):
+    for line in board:
+        for field in line:
+            if field == WIN_SCORE:
+                print("You won!")
+                return False
     for line_number in range(len(board)):
         for field_number in range(len(board[line_number])):
             if field_has_same_value_neighbours(board, [line_number, field_number]):
                 return True
+
+    print("Game over!")
     return False
 
 
@@ -164,7 +172,6 @@ def gameloop(board):
         game = check_game_over(board)
 
     print_board(board)
-    print("Game Over!")
 
 
 gameloop(randomboard(BOARD_SIZE))
