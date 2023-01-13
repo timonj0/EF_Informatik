@@ -145,6 +145,7 @@ def fill_baord(board):
 
     for column in columns:
         if -1 in column:
+            column.reverse()
             for i in range(column.count(-1)):
                 column.pop(column.index(-1))
                 column.append(2 ** random.randint(1, 3))
@@ -175,6 +176,6 @@ def gameloop(board):
     print("Game Over!")
 
 
-# gameloop(randomboard(5))
+# (randomboard(5))
 
 gameloop(my_board)
