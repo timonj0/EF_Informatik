@@ -1,6 +1,8 @@
 import random
 import math
 
+BOARD_SIZE = 5
+
 
 def randomboard(size: int):
     """Generate a random board"""
@@ -165,4 +167,4 @@ def gameloop(board):
     print("Game Over!")
 
 
-gameloop(randomboard(5))
+gameloop(randomboard(BOARD_SIZE))
