@@ -161,20 +161,6 @@ def check_game_over(board):
     return False
 
 
-def save_gamedata(board):
-    """Save game data to .json file"""
-    gamedata['game_board'] = board
-    with open(gamedata_path, 'w') as f:
-        json.dump(gamedata, f)
-
-
-def load_gamedata(board):
-    """Load game data from .json file"""
-    with open(gamedata_path, 'r') as f:
-        gamedata = json.load(f)
-        board = gamedata['game_board']
-
-
 def gameloop(board):
     game = True
     while game:
