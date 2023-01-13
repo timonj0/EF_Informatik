@@ -64,19 +64,21 @@ def print_board(board_to_print):
     print("+")
 
 
-def user_input(board):
+def user_input(board) -> list:
     """Validate and return user input to select a field"""
-    field_xy = input("Feld Auswählen (<x> <y>): ").split(" ")
-    try:
-        field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
-        field_xy.reverse()
-        if field_has_same_value_neighbours(board, field_xy):
-            return field_xy
-        else:
-            raise Exception("Field has no same value neighbours")
-    except:
-        print("Invalid user input")
-        user_input(board)
+    valid = False
+    while not valid:
+        field_xy = input("Feld Auswählen (<x> <y>): ").split(" ")
+        try:
+            field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
+            field_xy.reverse()
+            if field_has_same_value_neighbours(board, field_xy):
+                valid = True
+                return field_xy
+            else:
+                raise Exception("Field has no same value neighbours")
+        except:
+            print("Invalid user input")
 
 
 def field_exists(board, field_xy):
