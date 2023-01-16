@@ -1,8 +1,18 @@
 import random
 import math
+import pygame as pg
 
 BOARD_SIZE = 5
 WIN_SCORE = 1024
+
+SCREEN_WIDTH = 500
+SCREEN_HEIGHT = 500
+
+pg.init()
+
+# Init screen
+screen = pg.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
+screen.fill((255, 255, 255))
 
 
 def randomboard(size: int):
@@ -149,6 +159,10 @@ def fill_baord(board):
 
 
 def check_game_over(board):
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            print("Window closed")
+            return False
     for line in board:
         for field in line:
             if field == WIN_SCORE:
@@ -167,10 +181,11 @@ def gameloop(board):
     game = True
     while game:
         print_board(board)
+        """
         selected_field = user_input(board)
         mark_neighbours(board, selected_field)
         board = fill_baord(board)
-
+        """
         game = check_game_over(board)
 
     print_board(board)
