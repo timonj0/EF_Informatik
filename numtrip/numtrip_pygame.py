@@ -2,17 +2,22 @@ import random
 import math
 import pygame as pg
 
+pg.init()
+pg.font.init()
+
 BOARD_SIZE = 5
 WIN_SCORE = 1024
 
 SCREEN_WIDTH = 500
-SCREEN_HEIGHT = 500
+SCREEN_HEIGHT = SCREEN_WIDTH
 
-pg.init()
+FIELD_COLOR = (240, 180, 60)
+FONT = pg.font.Font('freesansbold.ttf', 32)
+
 
 # Init screen
 screen = pg.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
-screen.fill((255, 255, 255))
+screen.fill((0, 0, 0))
 
 
 def randomboard(size: int):
@@ -23,7 +28,7 @@ def randomboard(size: int):
 
 
 def print_board(board_to_print):
-    """Print a pretty board"""
+    """Print a pretty board in the console"""
     max_len = 1
     board = board_to_print
 
@@ -72,6 +77,20 @@ def print_board(board_to_print):
     for i in line:
         print("+-------", end='')
     print("+")
+
+    """Print a pretty board on the window"""
+    for row in board:
+        for field in row:
+            field_x = row.index(field) * 100 + 5
+            field_y = board.index(row) * 100 + 5
+            text = FONT.render(str(field), True, (255, 255, 255), FIELD_COLOR)
+            textRect = text.get_rect()
+            textRect.center = (field_x + 45, field_y + 45)
+
+            pg.draw.rect(surface=screen, color=FIELD_COLOR, rect=pg.Rect(field_x, field_y, 90, 90), border_radius=4)
+            screen.blit(text, textRect)
+
+    pg.display.flip()
 
 
 def user_input(board) -> list:
