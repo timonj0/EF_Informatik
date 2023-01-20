@@ -4,17 +4,32 @@
         <title>Lern Blog Blog</title>
         <link>https://timonj0.github.io/EF_Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Fri, 13 Jan 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Jan 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
         <item>
             <title><![CDATA[Weiterarbeit an NumTrip]]></title>
+            <link>https://timonj0.github.io/EF_Informatik/2023/01/16/numtrip-gui</link>
+            <guid>/2023/01/16/numtrip-gui</guid>
+            <pubDate>Mon, 16 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[16.01.2023]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="16012023">16.01.2023<a class="hash-link" href="#16012023" title="Direkter Link zur Überschrift">​</a></h2><p>Ich habe mich aus langeweile entschieden, mein nun mehr oder weniger fertiggestelltes NumTrip Spiel mithilfe einer grafischen Benutzeroberfläche auf die nächste Stufe zu bringen. Ich habe also PyGame installiert, die initialisierung implementiert und das Spielfeld in einem simplen Fenster dargestellt. Das Spielfeld wird jedoch massiv fehlerhaft dargestellt, da scheinbar zufällige Felder einfach fehlen.</p><p>Code zur darstellung des Spielfelds:
+for row in board:
+for field in row:
+field_x = row.index(field) <em> 100 + 5
+field_y = board.index(row) </em> 100 + 5
+text = FONT.render(str(field), True, (255, 255, 255), FIELD_COLOR)
+textRect = text.get_rect()
+textRect.center = (field_x + 45, field_y + 45)</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">            pg.draw.rect(surface=screen, color=FIELD_COLOR, rect=pg.Rect(field_x, field_y, 90, 90), border_radius=4)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            screen.blit(text, textRect)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    pg.display.flip()</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="In die Zwischenablage kopieren" title="Kopieren" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Weiterarbeit an NumTrip]]></title>
             <link>https://timonj0.github.io/EF_Informatik/2023/01/13/weiterarbeit-an-numtrip</link>
             <guid>/2023/01/13/weiterarbeit-an-numtrip</guid>
             <pubDate>Fri, 13 Jan 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[09.12.2022]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="09122022">09.12.2022<a class="hash-link" href="#09122022" title="Direkter Link zur Überschrift">​</a></h2><p>In dieser kurzen aber effektiven Arbeitssequenz habe ich den Code mehr oder weniger abgabefertig gemacht. Heisst, ich habe die 3 letzten Bugs, welche noch in dem Spiel waren, gefixt, den code aufgeräumt und leserlicher gemacht.</p>]]></content:encoded>
+            <description><![CDATA[12.01.2023]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="12012023">12.01.2023<a class="hash-link" href="#12012023" title="Direkter Link zur Überschrift">​</a></h2><p>In dieser kurzen aber effektiven Arbeitssequenz habe ich den Code mehr oder weniger abgabefertig gemacht. Heisst, ich habe die 3 letzten Bugs, welche noch in dem Spiel waren, gefixt, den code aufgeräumt und leserlicher gemacht.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Weiterarbeit an NumTrip]]></title>
