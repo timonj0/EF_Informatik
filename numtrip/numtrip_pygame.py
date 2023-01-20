@@ -4,12 +4,16 @@ import pygame as pg
 
 pg.init()
 pg.font.init()
+pg.display.set_caption('NumTrip')
 
 BOARD_SIZE = 5
 WIN_SCORE = 1024
 
 SCREEN_WIDTH = 500
 SCREEN_HEIGHT = SCREEN_WIDTH
+
+COLOR_PALETTE = [(255, 255, 0), (255, 200, 0), (255, 170, 0), (255, 150, 0),
+                 (255, 100, 0), (255, 50, 0), (0, 255, 0), (0, 255, 50), (0, 255, 100), (0, 255, 150), (0, 255, 200), (0, 255, 255), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]
 
 FIELD_COLOR = (240, 180, 60)
 FONT = pg.font.Font('freesansbold.ttf', 32)
@@ -44,11 +48,12 @@ def print_board(board_to_print):
         for col_idx in range(len(board[row_idx])):
             field_x = col_idx * 100 + 5
             field_y = row_idx * 100 + 5
-            text = FONT.render(str(board[row_idx][col_idx]), True, (255, 255, 255), FIELD_COLOR)
+            color = COLOR_PALETTE[int(math.log2(board[row_idx][col_idx]) - 1)]
+            text = FONT.render(str(board[row_idx][col_idx]), True, (255, 255, 255), color)
             textRect = text.get_rect()
             textRect.center = (field_x + 45, field_y + 45)
 
-            pg.draw.rect(surface=screen, color=FIELD_COLOR, rect=pg.Rect(field_x, field_y, 90, 90), border_radius=4)
+            pg.draw.rect(surface=screen, color=color, rect=pg.Rect(field_x, field_y, 90, 90), border_radius=4)
             screen.blit(text, textRect)
     pg.display.update()
 
@@ -132,10 +137,6 @@ def fill_baord(board):
 
 
 def check_game_over(board):
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            print("Window closed")
-            return False
     for line in board:
         for field in line:
             if field == WIN_SCORE:
@@ -164,6 +165,8 @@ def gameloop(board):
                     mark_neighbours(board, selected_field)
                     board = fill_baord(board)
                 game = check_game_over(board)
+            if event.type == pg.QUIT:
+                game = False
         CLOCK.tick(30)
     print_board(board)
 
