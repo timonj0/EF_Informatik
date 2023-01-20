@@ -28,7 +28,7 @@ def randomboard(size: int):
 
 
 def print_board(board_to_print):
-    """Print a pretty board in the console"""
+    """Print a pretty board"""
     max_len = 1
     board = board_to_print
 
@@ -38,7 +38,8 @@ def print_board(board_to_print):
             if len(str(i)) > max_len:
                 max_len = len(str(i))
 
-    # Print board
+    """
+    # Print board into the console
     # Column Numbers
     n = 1
     print(" ", end='')
@@ -77,6 +78,7 @@ def print_board(board_to_print):
     for i in line:
         print("+-------", end='')
     print("+")
+    """
 
     """Print a pretty board on the window"""
     for row in board:
@@ -200,13 +202,17 @@ def gameloop(board):
     game = True
     while game:
         print_board(board)
-        """
-        selected_field = user_input(board)
-        mark_neighbours(board, selected_field)
-        board = fill_baord(board)
-        """
-        game = check_game_over(board)
-
+        for event in pg.event.get():
+            if event.type == pg.MOUSEBUTTONUP:
+                mouse_x, mouse_y = pg.mouse.get_pos()
+                print(f"Mouse: {mouse_x} / {mouse_y}")
+                """
+                    selected_field = user_input(board)
+                    mark_neighbours(board, selected_field)
+                    board = fill_baord(board)
+                    """
+                game = check_game_over(board)
+        pg.time.wait(5)
     print_board(board)
 
 
