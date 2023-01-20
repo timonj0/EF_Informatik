@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://timonj0.github.io/EF_Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2023-01-16T00:00:00.000Z</updated>
+    <updated>2023-01-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://timonj0.github.io/EF_Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://timonj0.github.io/EF_Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
+        <id>/2023/01/20/numtrip-gui</id>
+        <link href="https://timonj0.github.io/EF_Informatik/2023/01/20/numtrip-gui"/>
+        <updated>2023-01-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[16.01.2023]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="16012023">16.01.2023<a class="hash-link" href="#16012023" title="Direkter Link zur Überschrift">​</a></h2><p>Als erstes habe ich heute viel Zeit damit verbracht, das Feld fehlerfrei auf dem Fenster darzustellen. Nach langer mühsamer Fehlersuche stellte sich schliessliche heraus, dass ich aus flüchtigkeit die list.index() funktion an einer Stelle benutzte, an welcher sie nicht das gewünschte Ergebnis zurück gibt. Das führte dazu, dass nicht nur das Feld lückenhaft dargestellt wurde, sondern vertauschte auch während des Spiels scheinbar zufällige Felder. Nun war der Fehler jedoch behoben und ein fehlerfreies NumTrip game war mit einer grafischen Benutzeroberfläche spielbar.</p><p>Als zweiten Schritt habe ich noch den unterschiedlichen Werten der Felder unterschiedliche Farben zugeweisen, was das Spielerlebnis bunt und lustig macht. Dazu habe ich alle Farbwerte in einer Liste gespeichert. Den index, welche Farbe ein bestimmtes Feld haben soll, wird dann einfach mit dem log2 des Wertes berechnet.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
         <id>/2023/01/16/numtrip-gui</id>

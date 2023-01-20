@@ -4,10 +4,18 @@
         <title>Lern Blog Blog</title>
         <link>https://timonj0.github.io/EF_Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Mon, 16 Jan 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Jan 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
+        <item>
+            <title><![CDATA[Weiterarbeit an NumTrip]]></title>
+            <link>https://timonj0.github.io/EF_Informatik/2023/01/20/numtrip-gui</link>
+            <guid>/2023/01/20/numtrip-gui</guid>
+            <pubDate>Fri, 20 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[16.01.2023]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="16012023">16.01.2023<a class="hash-link" href="#16012023" title="Direkter Link zur Überschrift">​</a></h2><p>Als erstes habe ich heute viel Zeit damit verbracht, das Feld fehlerfrei auf dem Fenster darzustellen. Nach langer mühsamer Fehlersuche stellte sich schliessliche heraus, dass ich aus flüchtigkeit die list.index() funktion an einer Stelle benutzte, an welcher sie nicht das gewünschte Ergebnis zurück gibt. Das führte dazu, dass nicht nur das Feld lückenhaft dargestellt wurde, sondern vertauschte auch während des Spiels scheinbar zufällige Felder. Nun war der Fehler jedoch behoben und ein fehlerfreies NumTrip game war mit einer grafischen Benutzeroberfläche spielbar.</p><p>Als zweiten Schritt habe ich noch den unterschiedlichen Werten der Felder unterschiedliche Farben zugeweisen, was das Spielerlebnis bunt und lustig macht. Dazu habe ich alle Farbwerte in einer Liste gespeichert. Den index, welche Farbe ein bestimmtes Feld haben soll, wird dann einfach mit dem log2 des Wertes berechnet.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Weiterarbeit an NumTrip]]></title>
             <link>https://timonj0.github.io/EF_Informatik/2023/01/16/numtrip-gui</link>
