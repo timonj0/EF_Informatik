@@ -4,10 +4,18 @@
         <title>Lern Blog Blog</title>
         <link>https://timonj0.github.io/EF_Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Fri, 23 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Jan 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
+        <item>
+            <title><![CDATA[Weiterarbeit an NumTrip]]></title>
+            <link>https://timonj0.github.io/EF_Informatik/2023/01/13/weiterarbeit-an-numtrip</link>
+            <guid>/2023/01/13/weiterarbeit-an-numtrip</guid>
+            <pubDate>Fri, 13 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[09.12.2022]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="09122022">09.12.2022<a class="hash-link" href="#09122022" title="Direkter Link zur Überschrift">​</a></h2><p>In dieser kurzen aber effektiven Arbeitssequenz habe ich den Code mehr oder weniger abgabefertig gemacht. Heisst, ich habe die 3 letzten Bugs, welche noch in dem Spiel waren, gefixt, den code aufgeräumt und leserlicher gemacht.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Weiterarbeit an NumTrip]]></title>
             <link>https://timonj0.github.io/EF_Informatik/2022/12/23/weiterarbeit-an-numtrip</link>

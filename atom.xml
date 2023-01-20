@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://timonj0.github.io/EF_Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2022-12-23T00:00:00.000Z</updated>
+    <updated>2023-01-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://timonj0.github.io/EF_Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://timonj0.github.io/EF_Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
+        <id>/2023/01/13/weiterarbeit-an-numtrip</id>
+        <link href="https://timonj0.github.io/EF_Informatik/2023/01/13/weiterarbeit-an-numtrip"/>
+        <updated>2023-01-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[09.12.2022]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="09122022">09.12.2022<a class="hash-link" href="#09122022" title="Direkter Link zur Überschrift">​</a></h2><p>In dieser kurzen aber effektiven Arbeitssequenz habe ich den Code mehr oder weniger abgabefertig gemacht. Heisst, ich habe die 3 letzten Bugs, welche noch in dem Spiel waren, gefixt, den code aufgeräumt und leserlicher gemacht.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
         <id>/2022/12/23/weiterarbeit-an-numtrip</id>
