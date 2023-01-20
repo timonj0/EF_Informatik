@@ -14,10 +14,11 @@ SCREEN_HEIGHT = SCREEN_WIDTH
 FIELD_COLOR = (240, 180, 60)
 FONT = pg.font.Font('freesansbold.ttf', 32)
 
+CLOCK = pg.time.Clock()
 
 # Init screen
 screen = pg.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
-screen.fill((0, 0, 0))
+screen.fill((255, 255, 255))
 
 
 def randomboard(size: int):
@@ -38,78 +39,29 @@ def print_board(board_to_print):
             if len(str(i)) > max_len:
                 max_len = len(str(i))
 
-    """
-    # Print board into the console
-    # Column Numbers
-    n = 1
-    print(" ", end='')
-    for i in board:
-        print(f"+   {n}   ", end='')
-        n = n + 1
-    print("+")
-    n = 1
-    # Lines
-    for line in board:
-        print("+", end='')
-        for i in line:
-            print("+-------", end='')
-        print("+")
-        for i in line:
-            print(" |      ", end='')
-        print(" |")
-        # Line numbers
-        print(n, end='')
-        for i in line:
-            print("|", end='')
-            spaces = 7 - len(str(i))
-            spaces_l = math.floor(spaces / 2)
-            spaces_r = math.ceil(spaces / 2)
-            for l in range(spaces_l):
-                print(" ", end='')
-            print(i, end='')
-            for l in range(spaces_r):
-                print(" ", end='')
-        print("|")
-        for i in line:
-            print(" |      ", end='')
-        print(" |")
-        n = n + 1
-    print("+", end='')
-    for i in line:
-        print("+-------", end='')
-    print("+")
-    """
-
     """Print a pretty board on the window"""
-    for row in board:
-        for field in row:
-            field_x = row.index(field) * 100 + 5
-            field_y = board.index(row) * 100 + 5
-            text = FONT.render(str(field), True, (255, 255, 255), FIELD_COLOR)
+    for row_idx in range(len(board)):
+        for col_idx in range(len(board[row_idx])):
+            field_x = col_idx * 100 + 5
+            field_y = row_idx * 100 + 5
+            text = FONT.render(str(board[row_idx][col_idx]), True, (255, 255, 255), FIELD_COLOR)
             textRect = text.get_rect()
             textRect.center = (field_x + 45, field_y + 45)
 
             pg.draw.rect(surface=screen, color=FIELD_COLOR, rect=pg.Rect(field_x, field_y, 90, 90), border_radius=4)
             screen.blit(text, textRect)
+    pg.display.update()
 
-    pg.display.flip()
 
-
-def user_input(board) -> list:
-    """Validate and return user input to select a field"""
-    valid = False
-    while not valid:
-        field_xy = input("Feld Auswählen (<x> <y>): ").split(" ")
-        try:
-            field_xy = [int(i) - 1 for i in field_xy]  # Convert coordinates to integers
-            field_xy.reverse()
-            if field_has_same_value_neighbours(board, field_xy):
-                valid = True
-                return field_xy
-            else:
-                raise Exception("Field has no same value neighbours")
-        except:
-            print("Invalid user input")
+def user_input(board, mouse_xy) -> list:
+    """Calculate clicked field from cursor position"""
+    field_x = math.floor(mouse_xy[0] / 100)
+    field_y = math.floor(mouse_xy[1] / 100)
+    field_xy = [field_y, field_x]
+    if field_has_same_value_neighbours(board, field_xy):
+        return [field_y, field_x]
+    else:
+        return -1
 
 
 def field_exists(board, field_xy):
@@ -202,17 +154,17 @@ def gameloop(board):
     game = True
     while game:
         print_board(board)
+
         for event in pg.event.get():
             if event.type == pg.MOUSEBUTTONUP:
                 mouse_x, mouse_y = pg.mouse.get_pos()
-                print(f"Mouse: {mouse_x} / {mouse_y}")
-                """
-                    selected_field = user_input(board)
+                selected_field = user_input(board, [mouse_x, mouse_y])
+                # TODO DEBUG
+                if not selected_field == -1:
                     mark_neighbours(board, selected_field)
                     board = fill_baord(board)
-                    """
                 game = check_game_over(board)
-        pg.time.wait(5)
+        CLOCK.tick(30)
     print_board(board)
 
 
