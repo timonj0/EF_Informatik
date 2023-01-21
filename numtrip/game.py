@@ -4,6 +4,9 @@ import math
 BOARD_SIZE = 5
 WIN_SCORE = 1024
 
+score = 0
+field_counter = 0
+
 
 def randomboard(size: int):
     """Generate a random board"""
@@ -62,6 +65,7 @@ def print_board(board_to_print):
     for i in line:
         print("+-------", end='')
     print("+")
+    print(f"Current score: {score}")
 
 
 def user_input(board) -> list:
@@ -113,11 +117,13 @@ def field_has_same_value_neighbours(board, field_xy):
 
 def mark_neighbours(board, selected_field: list):
     """Mark all connected fields with the same number with -1 and double the value of the selected field"""
+    global score, field_counter
     stack = [selected_field]
     target_number = int(board[selected_field[0]][selected_field[1]])
     while not len(stack) == 0:
         current_field = stack.pop()
         if board[current_field[0]][current_field[1]] == target_number and field_exists(board, current_field):
+            field_counter = field_counter + 1
             board[current_field[0]][current_field[1]] = -1
             if field_exists(board, [current_field[0], current_field[1] + 1]):
                 stack.append([current_field[0], current_field[1] + 1])
@@ -164,12 +170,15 @@ def check_game_over(board):
 
 
 def gameloop(board):
+    global field_counter, score
     game = True
     while game:
+        field_counter = 0
         print_board(board)
         selected_field = user_input(board)
         mark_neighbours(board, selected_field)
         board = fill_baord(board)
+        score = score + field_counter * board[selected_field[0]][selected_field[1]]
 
         game = check_game_over(board)
 

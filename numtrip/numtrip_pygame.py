@@ -20,6 +20,9 @@ FONT = pg.font.Font('freesansbold.ttf', 32)
 
 CLOCK = pg.time.Clock()
 
+score = 0
+field_counter = 0
+
 # Init screen
 screen = pg.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 screen.fill((255, 255, 255))
@@ -101,12 +104,14 @@ def field_has_same_value_neighbours(board, field_xy):
 
 def mark_neighbours(board, selected_field: list):
     """Mark all connected fields with the same number with -1 and double the value of the selected field"""
+    global score, field_counter
     stack = [selected_field]
     target_number = int(board[selected_field[0]][selected_field[1]])
     while not len(stack) == 0:
         current_field = stack.pop()
         if board[current_field[0]][current_field[1]] == target_number and field_exists(board, current_field):
             board[current_field[0]][current_field[1]] = -1
+            field_counter = field_counter + 1
             if field_exists(board, [current_field[0], current_field[1] + 1]):
                 stack.append([current_field[0], current_field[1] + 1])
             if field_exists(board, [current_field[0], current_field[1] - 1]):
@@ -152,18 +157,20 @@ def check_game_over(board):
 
 
 def gameloop(board):
+    global field_counter, score
     game = True
     while game:
         print_board(board)
 
         for event in pg.event.get():
             if event.type == pg.MOUSEBUTTONUP:
+                field_counter = 0
                 mouse_x, mouse_y = pg.mouse.get_pos()
                 selected_field = user_input(board, [mouse_x, mouse_y])
-                # TODO DEBUG
                 if not selected_field == -1:
                     mark_neighbours(board, selected_field)
                     board = fill_baord(board)
+                score = score + field_counter * board[selected_field[0]][selected_field[1]]
                 game = check_game_over(board)
             if event.type == pg.QUIT:
                 game = False
