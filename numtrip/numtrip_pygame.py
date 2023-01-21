@@ -6,11 +6,11 @@ pg.init()
 pg.font.init()
 pg.display.set_caption('NumTrip')
 
-BOARD_SIZE = 5
+BOARD_SIZE = 6
 WIN_SCORE = 1024
 
-SCREEN_WIDTH = 500
-SCREEN_HEIGHT = SCREEN_WIDTH
+SCREEN_WIDTH = BOARD_SIZE * 100
+SCREEN_HEIGHT = SCREEN_WIDTH + 100
 
 COLOR_PALETTE = [(255, 255, 0), (255, 200, 0), (255, 170, 0), (255, 150, 0),
                  (255, 100, 0), (255, 50, 0), (0, 255, 0), (0, 255, 50), (0, 255, 100), (0, 255, 150), (0, 255, 200), (0, 255, 255), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]
@@ -31,21 +31,10 @@ screen.fill((255, 255, 255))
 def randomboard(size: int):
     """Generate a random board"""
     return [
-        [2**random.randint(2, i + j) for i in range(1, size + 1)] for j in range(1, size + 1)
-    ]
+        [2**random.randint(1, 4) for i in range(1, size + 1)] for j in range(1, size + 1)]
 
 
-def print_board(board_to_print):
-    """Print a pretty board"""
-    max_len = 1
-    board = board_to_print
-
-    # Get the length of the longest number on the board
-    for l in board:
-        for i in l:
-            if len(str(i)) > max_len:
-                max_len = len(str(i))
-
+def print_board(board):
     """Print a pretty board on the window"""
     for row_idx in range(len(board)):
         for col_idx in range(len(board[row_idx])):
@@ -58,6 +47,12 @@ def print_board(board_to_print):
 
             pg.draw.rect(surface=screen, color=color, rect=pg.Rect(field_x, field_y, 90, 90), border_radius=4)
             screen.blit(text, textRect)
+
+    score_text = pg.font.Font('freesansbold.ttf', 50).render(f" Score: {score} ", True, (0, 0, 0), (255, 255, 255))
+    score_textRect = score_text.get_rect()
+    score_textRect.center = (200, SCREEN_HEIGHT - 50)
+    screen.blit(score_text, score_textRect)
+
     pg.display.update()
 
 
@@ -170,7 +165,7 @@ def gameloop(board):
                 if not selected_field == -1:
                     mark_neighbours(board, selected_field)
                     board = fill_baord(board)
-                score = score + field_counter * board[selected_field[0]][selected_field[1]]
+                    score = score + field_counter * board[selected_field[0]][selected_field[1]]
                 game = check_game_over(board)
             if event.type == pg.QUIT:
                 game = False
