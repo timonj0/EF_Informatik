@@ -137,19 +137,20 @@ def fill_baord(board):
 
 
 def check_game_over(board):
+    msg = "Game over!"
     for line in board:
         for field in line:
             if field == WIN_SCORE:
-                print("You won!")
-                return False
-    for line_number in range(len(board)):
-        for field_number in range(len(board[line_number])):
-            if field_has_same_value_neighbours(board, [line_number, field_number]):
-                return True
+                msg = "You won!"
+    if not msg == "You won!":
+        for line_number in range(len(board)):
+            for field_number in range(len(board[line_number])):
+                if field_has_same_value_neighbours(board, [line_number, field_number]):
+                    return True
 
-    print("Game over!")
+    print_board(board)
     score_text = pg.font.Font('freesansbold.ttf', 50).render(
-        f"Game Over!", True, (0, 0, 0),)
+        msg, True, (0, 0, 0),)
     score_textRect = score_text.get_rect()
     score_textRect.center = (SCREEN_WIDTH / 2, (SCREEN_HEIGHT - 100) / 2)
     screen.blit(score_text, score_textRect)
@@ -183,7 +184,6 @@ def gameloop(board):
             if event.type == pg.QUIT:
                 game = False
         CLOCK.tick(30)
-    print_board(board)
 
 
 gameloop(randomboard(BOARD_SIZE))
