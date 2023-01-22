@@ -148,6 +148,19 @@ def check_game_over(board):
                 return True
 
     print("Game over!")
+    score_text = pg.font.Font('freesansbold.ttf', 50).render(
+        f"Game Over!", True, (0, 0, 0),)
+    score_textRect = score_text.get_rect()
+    score_textRect.center = (SCREEN_WIDTH / 2, (SCREEN_HEIGHT - 100) / 2)
+    screen.blit(score_text, score_textRect)
+    pg.display.update()
+    click = False
+    while not click:
+        for event in pg.event.get():
+            if event.type == pg.MOUSEBUTTONUP:
+                click = True
+            elif event.type == pg.QUIT:
+                click == True
     return False
 
 
