@@ -1,7 +1,7 @@
 import random
 import math
 
-BOARD_SIZE = 5
+BOARD_SIZE = 4
 WIN_SCORE = 1024
 
 score = 0
@@ -10,9 +10,7 @@ field_counter = 0
 
 def randomboard(size: int):
     """Generate a random board"""
-    return [
-        [2**random.randint(2, i + j) for i in range(1, size + 1)] for j in range(1, size + 1)
-    ]
+    return [[2**random.randint(1, 4) for i in range(1, size + 1)] for j in range(1, size + 1)]
 
 
 def print_board(board_to_print):
