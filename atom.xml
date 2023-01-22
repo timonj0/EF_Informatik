@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://timonj0.github.io/EF_Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2023-01-21T00:00:00.000Z</updated>
+    <updated>2023-01-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://timonj0.github.io/EF_Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://timonj0.github.io/EF_Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
+        <id>/2023/01/22/weiterarbeit-an-numtrip</id>
+        <link href="https://timonj0.github.io/EF_Informatik/2023/01/22/weiterarbeit-an-numtrip"/>
+        <updated>2023-01-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[22.01.2023]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="22012023">22.01.2023<a class="hash-link" href="#22012023" title="Direkter Link zur Überschrift">​</a></h2><p>Heute habe ich noch letzte Details wie Win- und Game-Over-Nachrichten in das Spiel implementiert, wodurch es nun vollumfänglich spielbar ist.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weiterarbeit an NumTrip]]></title>
         <id>/2023/01/21/weiterarbeit-an-numtrip</id>
