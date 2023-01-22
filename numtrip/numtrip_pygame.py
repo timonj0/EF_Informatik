@@ -6,7 +6,7 @@ pg.init()
 pg.font.init()
 pg.display.set_caption('NumTrip')
 
-BOARD_SIZE = 6
+BOARD_SIZE = 4
 WIN_SCORE = 1024
 
 SCREEN_WIDTH = BOARD_SIZE * 100
