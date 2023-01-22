@@ -4,6 +4,7 @@
 Ich habe mich aus langeweile entschieden, mein nun mehr oder weniger fertiggestelltes NumTrip Spiel mithilfe einer grafischen Benutzeroberfläche auf die nächste Stufe zu bringen. Ich habe also PyGame installiert, die initialisierung implementiert und das Spielfeld in einem simplen Fenster dargestellt. Das Spielfeld wird jedoch massiv fehlerhaft dargestellt, da scheinbar zufällige Felder einfach fehlen.
 
 Code zur darstellung des Spielfelds:
+
     for row in board:
             for field in row:
                 field_x = row.index(field) * 100 + 5
