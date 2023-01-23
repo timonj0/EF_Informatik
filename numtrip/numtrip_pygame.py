@@ -183,7 +183,7 @@ def gameloop(board):
                 game = check_game_over(board)
             if event.type == pg.QUIT:
                 game = False
-        CLOCK.tick(30)
+        CLOCK.tick(20)
 
 
 gameloop(randomboard(BOARD_SIZE))
