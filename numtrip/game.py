@@ -75,7 +75,7 @@ def user_input(board) -> list:
                 valid = True
                 return field_xy
             else:
-                raise Exception("Field has no same value neighbours")
+                raise Exception("Field has no neighbours of the same value")
         except:
             print("Invalid user input")
 
