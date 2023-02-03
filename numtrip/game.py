@@ -11,6 +11,8 @@ def randomboard(size: int):
     """Generate a random board"""
     return [[2**random.randint(1, 4) for i in range(1, size + 1)] for j in range(1, size + 1)]
 
+#Mehr Kommentare & Erklärungen was der Code genau macht
+
 def print_board(board_to_print):
     """Print a pretty board"""
     max_len = 1
