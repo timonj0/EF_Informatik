@@ -7,11 +7,9 @@ WIN_SCORE = 1024
 score = 0
 field_counter = 0
 
-
 def randomboard(size: int):
     """Generate a random board"""
     return [[2**random.randint(1, 4) for i in range(1, size + 1)] for j in range(1, size + 1)]
-
 
 def print_board(board_to_print):
     """Print a pretty board"""
@@ -65,7 +63,6 @@ def print_board(board_to_print):
     print("+")
     print(f"Current score: {score}")
 
-
 def user_input(board) -> list:
     """Validate and return user input to select a field"""
     valid = False
@@ -82,7 +79,6 @@ def user_input(board) -> list:
         except:
             print("Invalid user input")
 
-
 def field_exists(board, field_xy):
     """Check if field_xy exists"""
     field_x = field_xy[0]
@@ -94,7 +90,6 @@ def field_exists(board, field_xy):
         return False
     else:
         return True
-
 
 def field_has_same_value_neighbours(board, field_xy):
     target_value = board[field_xy[0]][field_xy[1]]
@@ -111,7 +106,6 @@ def field_has_same_value_neighbours(board, field_xy):
         if board[field[0]][field[1]] == target_value:
             return True
     return False
-
 
 def mark_neighbours(board, selected_field: list):
     """Mark all connected fields with the same number with -1 and double the value of the selected field"""
@@ -134,7 +128,6 @@ def mark_neighbours(board, selected_field: list):
 
     board[selected_field[0]][selected_field[1]] = target_number * 2
 
-
 def fill_baord(board):
     """Fill all empty spaces in a gameboard"""
 
@@ -151,7 +144,6 @@ def fill_baord(board):
 
     return [[columns[j][i] for j in range(len(columns))] for i in range(len(columns[0]))]
 
-
 def check_game_over(board):
     for line in board:
         for field in line:
@@ -165,7 +157,6 @@ def check_game_over(board):
 
     print("Game over!")
     return False
-
 
 def gameloop(board):
     global field_counter, score
@@ -181,6 +172,5 @@ def gameloop(board):
         game = check_game_over(board)
 
     print_board(board)
-
 
 gameloop(randomboard(BOARD_SIZE))
