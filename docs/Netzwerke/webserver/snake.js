@@ -28,6 +28,9 @@ var ctx;
 
 // The game loop
 function main() {
+    // Print startup message
+    console.log("Snake game started");
+
     // Get the canvas context
     ctx = document.getElementById("canvas").getContext("2d");
 
