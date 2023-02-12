@@ -12,7 +12,7 @@ cat.src = "images/cat.png";
 var cats = [];
 
 // The number of cats
-var numCats = 10;
+var numCats = 100;
 
 // The game loop
 function main() {
