@@ -32,7 +32,7 @@ function main() {
     console.log("Snake game started");
 
     // Get the canvas context
-    ctx = document.getElementById("canvas").getContext("2d");
+    ctx = document.getElementById("canvas_snake").getContext("2d");
 
     // Start the game loop
     setInterval(loop, 100);
