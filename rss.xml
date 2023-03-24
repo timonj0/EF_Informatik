@@ -4,10 +4,18 @@
         <title>Lern Blog Blog</title>
         <link>https://timonj0.github.io/EF_Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Fri, 10 Mar 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Mar 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
+        <item>
+            <title><![CDATA[Cookies]]></title>
+            <link>https://timonj0.github.io/EF_Informatik/2023/03/24/cookies</link>
+            <guid>/2023/03/24/cookies</guid>
+            <pubDate>Fri, 24 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Funktionsweise]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="funktionsweise">Funktionsweise<a class="hash-link" href="#funktionsweise" title="Direkter Link zur Überschrift">​</a></h2><p>Cookies sind kleine Dateien, welche von einem Webserver an den Client gesendet und von diesem gespeichert werden. Bei einer erneuten Anfrage an den Webserver kann der Cookie mitgesendet werden, damit der Server gewisse Informationen wie Login-Daten automatisiert erhält.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="wie-cookies-logins-vereinfachen">Wie Cookies Logins vereinfachen<a class="hash-link" href="#wie-cookies-logins-vereinfachen" title="Direkter Link zur Überschrift">​</a></h2><p>Wie bereits erwähnt, können Cookies den Login-Prozess auf Websiten stark vereinfachen. Das geschieht dadurch, dass die Logindaten oder ein Schlüsselwert bei der Anfrage an den Webserver mitgeschickt werden. Akzeptiert der Server das Login, kann er die nicht öffentlich zugänglichen Daten direkt zurückschicken, ohne dass sich der User mühsam einloggen muss.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="unsichere-benutzerdatenbanken">Unsichere Benutzerdatenbanken<a class="hash-link" href="#unsichere-benutzerdatenbanken" title="Direkter Link zur Überschrift">​</a></h2><p>In einer Benutzerdatenbank dürfen Passwörter niemals unverschlüsselt gesichert werden. Ist das der Fall, werden bei Data-Breaches die hochsensiblen Userdaten unzensiert veröffentlicht. Stattdessen müssen zu diesem Zweck Hashes verwendet werden, welche selbst bei Leaks für Aussenstehende gänzlich nutzlos sind.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[API mit nodeRED erstellen]]></title>
             <link>https://timonj0.github.io/EF_Informatik/2023/03/10/api-mit-nodered</link>
